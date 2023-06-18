@@ -1,6 +1,7 @@
 import { ArrowParens, TrailingComma } from 'projen/lib/javascript';
 import { TerraformModule } from 'projen-cdktf-hybrid-construct';
 
+const moduleVersion = '5.0.1';
 const commonIgnore = ['.idea', '.vscode'];
 
 const project = new TerraformModule({
@@ -16,7 +17,27 @@ const project = new TerraformModule({
     {
       name: 'executors',
       source: 'sourcegraph/executors/aws',
-      version: '~> 5.0.1',
+      version: `~> ${moduleVersion}`,
+    },
+    {
+      name: 'executors_credentials',
+      source: 'sourcegraph/executors/aws//modules/credentials',
+      version: `~> ${moduleVersion}`,
+    },
+    {
+      name: 'executors_networking',
+      source: 'sourcegraph/executors/aws//modules/networking',
+      version: `~> ${moduleVersion}`,
+    },
+    {
+      name: 'executors_docker-mirror',
+      source: 'sourcegraph/executors/aws//modules/docker-mirror',
+      version: `~> ${moduleVersion}`,
+    },
+    {
+      name: 'executors_executors',
+      source: 'sourcegraph/executors/aws//modules/executors',
+      version: `~> ${moduleVersion}`,
     },
   ],
   prettier: true,

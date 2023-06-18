@@ -7,6 +7,26 @@
       "name": "executors",
       "source": "sourcegraph/executors/aws",
       "version": "~> 5.0.1"
+    },
+    {
+      "name": "executors_credentials",
+      "source": "sourcegraph/executors/aws//modules/credentials",
+      "version": "~> 5.0.1"
+    },
+    {
+      "name": "executors_networking",
+      "source": "sourcegraph/executors/aws//modules/networking",
+      "version": "~> 5.0.1"
+    },
+    {
+      "name": "executors_docker-mirror",
+      "source": "sourcegraph/executors/aws//modules/docker-mirror",
+      "version": "~> 5.0.1"
+    },
+    {
+      "name": "executors_executors",
+      "source": "sourcegraph/executors/aws//modules/executors",
+      "version": "~> 5.0.1"
     }
   ],
   "projectId": "cdktf-sourcegraph-aws-executors",

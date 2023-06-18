@@ -1,6 +1,10 @@
 {
   "cdktf": "0.17.0",
   "providers": {
-    "executors": "~> 5.0.1"
+    "executors": "~> 5.0.1",
+    "executors_credentials": "~> 5.0.1",
+    "executors_docker-mirror": "~> 5.0.1",
+    "executors_executors": "~> 5.0.1",
+    "executors_networking": "~> 5.0.1"
   }
 }
