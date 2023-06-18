@@ -22,12 +22,12 @@
     },
     {
       "name": "cdktf-cli",
-      "version": "0.15.0",
+      "version": "0.17.0",
       "type": "build"
     },
     {
       "name": "cdktf",
-      "version": "0.15.0",
+      "version": "0.17.0",
       "type": "build"
     },
     {
@@ -105,11 +105,6 @@
       "type": "build"
     },
     {
-      "name": "standard-version",
-      "version": "^9",
-      "type": "build"
-    },
-    {
       "name": "ts-jest",
       "version": "^27",
       "type": "build"
@@ -121,6 +116,7 @@
     },
     {
       "name": "typescript",
+      "version": "4.9.5",
       "type": "build"
     },
     {
@@ -135,7 +131,7 @@
     },
     {
       "name": "cdktf",
-      "version": ">=0.15.0",
+      "version": ">=0.17.0",
       "type": "peer"
     },
     {

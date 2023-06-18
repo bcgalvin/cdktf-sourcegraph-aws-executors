@@ -1,4 +1,4 @@
 // Re-Export module bindings
-export * from "./terraformModules";
+export * from './terraformModules';
 
 // Add your custom constructs here

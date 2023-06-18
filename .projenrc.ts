@@ -1,17 +1,43 @@
-import { TerraformModule } from "projen-cdktf-hybrid-construct";
-const project = new TerraformModule({
-  author: "Bryan Galvin",
-  authorAddress: "bcgalvin@gmail.com",
-  defaultReleaseBranch: "main",
-  devDeps: ["projen-cdktf-hybrid-construct"],
-  name: "cdktf-sourcegraph-aws-executors",
-  repositoryUrl:
-    "https://github.com/bcgalvin/cdktf-sourcegraph-aws-executors.git",
+import { ArrowParens, TrailingComma } from 'projen/lib/javascript';
+import { TerraformModule } from 'projen-cdktf-hybrid-construct';
 
-  // cdktfVersion: "^0.13.0",      /* Minimum target version of this library. */
-  // deps: [],                     /* Runtime dependencies of this module. */
-  // description: undefined,       /* The description is just a string that helps people understand the purpose of the package. */
-  // packageName: undefined,       /* The "name" in package.json. */
-  // terraformModules: undefined,  /* List of modules to generate bindings for. */
+const commonIgnore = ['.idea', '.vscode'];
+
+const project = new TerraformModule({
+  author: 'Bryan Galvin',
+  authorAddress: 'bcgalvin@gmail.com',
+  defaultReleaseBranch: 'main',
+  devDeps: ['projen-cdktf-hybrid-construct'],
+  name: 'cdktf-sourcegraph-aws-executors',
+  repositoryUrl: 'https://github.com/bcgalvin/cdktf-sourcegraph-aws-executors.git',
+  versionrcOptions: {},
+  cdktfVersion: '0.17.0',
+  typescriptVersion: '4.9.5',
+  terraformModules: [
+    {
+      name: 'executors',
+      source: 'sourcegraph/executors/aws',
+      version: '~> 5.0.1',
+    },
+  ],
+  prettier: true,
+  prettierOptions: {
+    settings: {
+      printWidth: 120,
+      trailingComma: TrailingComma.ALL,
+      arrowParens: ArrowParens.ALWAYS,
+      singleQuote: true,
+    },
+  },
+  eslintOptions: {
+    dirs: ['src'],
+    ignorePatterns: ['src/terraformModules.ts'], // permissions issue w projen plugin
+  },
+  // Ignore files
+  gitignore: commonIgnore,
+  release: false,
+
+  projectId: 'cdktf-sourcegraph-aws-executors',
 });
+
 project.synth();

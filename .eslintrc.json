@@ -37,11 +37,7 @@
     }
   },
   "ignorePatterns": [
-    "*.js",
-    "*.d.ts",
-    "node_modules/",
-    "*.generated.ts",
-    "coverage",
+    "src/terraformModules.ts",
     "!.projenrc.ts",
     "!projenrc/**/*.ts"
   ],
