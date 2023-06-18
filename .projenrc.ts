@@ -10,7 +10,6 @@ const project = new TerraformModule({
   devDeps: ['projen-cdktf-hybrid-construct'],
   name: 'cdktf-sourcegraph-aws-executors',
   repositoryUrl: 'https://github.com/bcgalvin/cdktf-sourcegraph-aws-executors.git',
-  versionrcOptions: {},
   cdktfVersion: '0.17.0',
   typescriptVersion: '4.9.5',
   terraformModules: [
