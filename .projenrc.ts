@@ -56,7 +56,6 @@ const project = new TerraformModule({
   },
   // Ignore files
   gitignore: commonIgnore,
-  release: false,
   // publishing
   projectId: 'cdktf-sourcegraph-aws-executors',
   ...publishToRegistries({
